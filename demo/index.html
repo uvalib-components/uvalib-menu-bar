@@ -15,10 +15,30 @@
     import { html, render } from 'lit-html';
     import '../uvalib-menu-bar.js';
 
-    const title = 'Hello owc World!';
+    const items = [
+      {
+        text: 'Project',
+        children: [
+          {text: 'Users',
+            children: [{text: 'List'}, {text: 'Add'}]
+          },
+          {text: 'Billing',
+            children: [{text: 'Invoices'}, {text: 'Balance Events'}]
+          },
+        ]
+      },
+      {
+        text: 'Account',
+        children: [
+          {text: 'Edit Profile'},
+          {text: 'Privacy Settings'}
+        ]
+      },
+      {text: 'Sign Out'}
+    ];
     render(
       html`
-        <uvalib-menu-bar .title=${title}>
+        <uvalib-menu-bar .items=${items}>
           some more light-dom
         </uvalib-menu-bar>
       `,

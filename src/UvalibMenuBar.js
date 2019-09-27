@@ -1,36 +1,32 @@
 import { html, css, LitElement } from 'lit-element';
+import '@vaadin/vaadin-menu-bar/vaadin-menu-bar.js';
 
 export class UvalibMenuBar extends LitElement {
   static get styles() {
     return css`
       :host {
         display: block;
-        padding: 25px;
+        height: 50px;
       }
     `;
   }
 
   static get properties() {
     return {
-      title: { type: String },
-      counter: { type: Number },
+      items: {
+        type: Object,
+      },
     };
   }
 
   constructor() {
     super();
-    this.title = 'Hey there';
-    this.counter = 5;
-  }
-
-  __increment() {
-    this.counter += 1;
+    this.items = [];
   }
 
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <vaadin-menu-bar .items="${this.items}"></vaadin-menu-bar>
     `;
   }
 }
