@@ -16,17 +16,26 @@ export class UvalibMenuBar extends LitElement {
       items: {
         type: Object,
       },
+      openOnHover: {
+        reflect: true,
+        type: Boolean,
+        attribute: 'open-on-hover',
+      },
     };
   }
 
   constructor() {
     super();
     this.items = [];
+    this.openOnHover = false;
   }
 
   render() {
     return html`
-      <vaadin-menu-bar .items="${this.items}"></vaadin-menu-bar>
+      <vaadin-menu-bar
+        .items="${this.items}"
+        ?open-on-hover="${this.openOnHover}"
+      ></vaadin-menu-bar>
     `;
   }
 }
