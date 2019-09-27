@@ -27,8 +27,9 @@
     "storybook:build": "build-storybook -o _site -s storybook-static"
   },
   "dependencies": {
-    "lit-html": "^1.0.0",
-    "lit-element": "^2.0.1"
+    "@vaadin/vaadin-menu-bar": "^1.0.3",
+    "lit-element": "^2.0.1",
+    "lit-html": "^1.0.0"
   },
   "devDependencies": {
     "es-dev-server": "^1.5.0",
