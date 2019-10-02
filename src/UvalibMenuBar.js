@@ -34,7 +34,17 @@ export class UvalibMenuBar extends LitElement {
       <vaadin-menu-bar
         .items="${this.items}"
         ?open-on-hover="${this.openOnHover}"
+        @item-selected="${this.__selected}"
       ></vaadin-menu-bar>
     `;
+  }
+
+  __selected(ev) {
+    const event = new CustomEvent('item-selected', {
+      detail: ev.detail,
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(event);
   }
 }

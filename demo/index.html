@@ -44,6 +44,9 @@
       `,
       document.querySelector('#demo')
     );
+    document.addEventListener('item-selected', function(e) {
+      console.log( JSON.stringify(e.detail) );
+    });
   </script>
 </body>
 </html>
