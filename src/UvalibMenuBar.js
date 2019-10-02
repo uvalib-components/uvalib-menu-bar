@@ -6,7 +6,6 @@ export class UvalibMenuBar extends LitElement {
     return css`
       :host {
         display: block;
-        height: 50px;
       }
     `;
   }
